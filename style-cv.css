@@ -1,0 +1,605 @@
+/********************************* GENERAL **********************/
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-size: 16px;
+  margin: 0;
+}
+/*******************************  HEADER **********************/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3em;
+  align-items: center;
+  padding-left: 1em;
+  /* background-color: rgba(188, 127, 228, 0.83); */
+  background-color: -webkit-linear-gradient(
+    180deg,
+    rgba(188, 127, 228, 0.83),
+    #ffffff
+  ); /*Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    180deg,
+    #bc7fe4d4,
+    #ffffff
+  ); /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: black;
+}
+.menu {
+  width: 60%;
+}
+.flex {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+.flex a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #8e34ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 1em;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+/* Ajoutez un media query pour les petits écrans */
+@media screen and (max-width: 980px) {
+  .menu {
+    z-index: 1;
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(188, 127, 228, 0.949);
+  }
+
+  .menu.active {
+    display: block;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flex li {
+    margin: 10px 0;
+  }
+}
+
+/******************************************* PRESENTATION **********************/
+.header-presentation {
+  background-color: -webkit-linear-gradient(
+    180deg,
+    rgba(188, 127, 228, 0.83),
+    #ffffff
+  ); /*Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #bc7fe4d4
+  ); /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  width: 80%;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+h1 {
+  text-align: center;
+  color: #8e34ca;
+  font-size: 5em;
+  text-transform: uppercase;
+}
+.title h2 {
+  font-size: 3em;
+  border-top: 4px solid #8e34ca;
+  border-bottom: 4px solid #8e34ca;
+  margin-top: 10px;
+}
+.custom-shape-divider-top-1693653529 {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1693653529 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 102px;
+}
+
+.custom-shape-divider-top-1693653529 .shape-fill {
+  fill: #bc7fe4d4;
+}
+/*******************************  PROFIL **********************/
+.profil-title {
+  position: relative;
+  text-align: center;
+}
+
+.uppercase {
+  font-size: 5em;
+  text-transform: uppercase;
+  color: rgb(194, 194, 193);
+}
+
+.name {
+  font-size: 1.5em;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -60%);
+  color: #8e34ca#8e34ca; /* Couleur violette */
+}
+.profil-text {
+  width: 50%;
+  margin: auto;
+  line-height: 2em;
+  font-size: 1.2em;
+  text-align: justify;
+}
+/*******************************  SKILLS **********************/
+.custom-shape-divider-bottom-1692988031 {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1692988031 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 100px;
+}
+
+.custom-shape-divider-bottom-1692988031 .shape-fill {
+  fill: #bc7fe4d4;
+}
+.skills-section {
+  background-color: #bc7fe4d4;
+  position: relative;
+  padding-bottom: 1em;
+  margin-top: 0;
+}
+.skills-title {
+  text-align: center;
+  color: rgb(241, 241, 241);
+  position: relative;
+  margin-top: 0;
+  padding-top: 1em;
+}
+
+.cv {
+  font-size: 1.5em;
+  position: absolute;
+  top: 80%;
+  left: 70%;
+  transform: translate(-80%, -70%);
+  color: #000000; /* Couleur violette */
+}
+.skills-download {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.cv-picture {
+  margin-left: 3em;
+  width: 300px;
+}
+.custom-shape-divider-top-1692978024 {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1692978024 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.custom-shape-divider-top-1692978024 .shape-fill {
+  fill: #bc7fe4d4;
+}
+/************************** BUTTON *****************************/
+.button {
+  --width: 200px;
+  --height: 50px;
+  --tooltip-height: 35px;
+  --tooltip-width: 90px;
+  --gap-between-tooltip-to-button: 18px;
+  --button-color: #8e34ca;
+  --tooltip-color: #fff;
+  width: var(--width);
+  height: var(--height);
+  background: var(--button-color);
+  position: relative;
+  text-align: center;
+  border-radius: 1em;
+  font-family: "Arial";
+  transition: background 0.3s;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-wrapper,
+.text,
+.icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+
+.text {
+  top: 0;
+}
+
+.text,
+.icon {
+  transition: top 0.5s;
+}
+
+.icon {
+  color: #fff;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.button:hover {
+  background: #6c18ff;
+}
+
+.button:hover .text {
+  top: -100%;
+}
+
+.button:hover .icon {
+  top: 0;
+}
+
+/************************** SCROLL **************************/
+#scroll-to-top {
+  /* display: none; */
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #333;
+  color: rgb(248, 248, 248);
+  padding: 10px 20px;
+  border-radius: 50%;
+  font-size: 30px;
+  cursor: pointer;
+  transition: opacity 0.8s;
+  z-index: 1;
+}
+
+#scroll-to-top:hover {
+  background-color: #555;
+}
+
+.hide-scroll {
+  opacity: 0;
+  pointer-events: none;
+}
+/*********************** SKILLS CARD**********************/
+.skills-card {
+  margin: 2em auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.flip-card {
+  border-radius: 10px;
+  width: 150px;
+  height: 200px;
+  perspective: 1000px;
+  margin: 1em 2em;
+  box-shadow: 8px 8px 8px gray;
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+.flip-card-front,
+.flip-card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+
+.flip-card-front {
+  background-color: #ffffff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flip-card-front img {
+  width: 50%;
+}
+/**************************** PORTFOLIO ********************************/
+.portfolio-title {
+  text-align: center;
+  position: relative;
+}
+
+.second-title {
+  font-size: 1.5em;
+  position: absolute;
+  top: 60%;
+  left: 60%;
+  transform: translate(-60%, -60%);
+  color: #000000; /* Couleur violette */
+}
+.project {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.card {
+  width: 35%;
+  text-align: center;
+  box-shadow: 10px 10px 5px lightgray;
+  padding: 1em;
+  margin: 1em 1em;
+  border-radius: 10px;
+}
+.image-project img {
+  width: 100%;
+}
+.logo {
+  display: flex;
+  justify-content: space-around;
+  margin: 1.5em 0;
+}
+.logo img {
+  height: 50px;
+  width: auto;
+}
+/************************ PORTFOLIO BUTTON **************************/
+.group-button {
+  display: flex;
+  justify-content: space-around;
+}
+.button-card {
+  background-color: #bc7fe4d4;
+  border: 0;
+  border-radius: 56px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  outline: 0;
+  padding: 10px 15px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-card:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s;
+  width: 92%;
+}
+
+.button-card:hover {
+  box-shadow: rgba(255, 255, 255, 0.2) 0 3px 15px inset,
+    rgba(0, 0, 0, 0.1) 0 3px 5px, rgba(0, 0, 0, 0.1) 0 10px 13px;
+  transform: scale(1.05);
+}
+
+/*********************** FOOTER ********************************/
+.custom-shape-divider-bottom-1693000282 {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1693000282 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 101px;
+}
+
+.custom-shape-divider-bottom-1693000282 .shape-fill {
+  fill: #bc7fe4d4;
+}
+footer {
+  background-color: #bc7fe4eb;
+}
+.contact-title {
+  padding-top: 20px;
+  text-align: center;
+  margin-top: -1px;
+  color: rgb(241, 241, 241);
+  margin-bottom: 0.5em;
+}
+.contact-logo {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 2em;
+}
+.linkedin i,
+.mail i,
+.github i {
+  transition: transform 0.5s;
+}
+
+.linkedin i:hover,
+.mail i:hover,
+.github i:hover {
+  transform: scale(1.3);
+}
+/***************************** ANIMATION ***********************/
+.scroll-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.scroll-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/************************* RESPONSIVE TABLETTE *************************/
+@media (max-width: 1100px) {
+  /********** button********/
+  .button-card {
+    padding: 10px 15px;
+  }
+}
+@media (max-width: 992px) {
+  h1 {
+    font-size: 4em;
+  }
+  .title h2 {
+    font-size: 1.5em;
+  }
+  .profil-text {
+    width: 80%;
+    margin: auto;
+  }
+  .logo img {
+    height: 40px;
+    width: auto;
+  }
+  .card {
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 750px) {
+  .title {
+    width: 90%;
+  }
+  h1 {
+    font-size: 4em;
+    text-align: center;
+  }
+  .title h2 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+  .uppercase {
+    font-size: 3em;
+  }
+  .skills-download {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cv-picture {
+    width: 400px;
+    margin-bottom: 1em;
+  }
+  .group-button {
+    display: flex;
+    flex-direction: column;
+  }
+  .button-card {
+    margin-bottom: 1em;
+  }
+}
